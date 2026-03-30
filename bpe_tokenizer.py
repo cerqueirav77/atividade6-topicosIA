@@ -34,3 +34,15 @@ for i in range(num_merges):
     vocab = merge_vocab(best_pair, vocab)
     print(f"\nIteration {i+1}: Merging {best_pair}")
     print("Updated vocabulary:", vocab)
+
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("bert-base-multilingual-cased")
+
+frase = "Os hiper-parâmetros do transformer são inconstitucionalmente difíceis de ajustar."
+
+tokens = tokenizer.tokenize(frase)
+
+print("\n--- Tarefa 3: WordPiece (BERT Multilingual) ---")
+print(f"Frase original: {frase}")
+print(f"Tokens gerados: {tokens}")
